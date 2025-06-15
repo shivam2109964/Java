@@ -7,6 +7,6 @@ public class Loopy {
             System.out.println("Value of x is " + x);
             x = x + 1;
         }
-        
+        System.out.println("This is after loop");
     }
 }
