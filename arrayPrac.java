@@ -1,4 +1,3 @@
-package Java_100_progam;
 
 import java.util.Scanner;
 
