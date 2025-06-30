@@ -10,11 +10,12 @@ public class ArrayTest {
                 {
                         { 7, 8, 9 },
                         { 12, 11, 12 }
+
                 }
         };
-        for(int i = 0; i < array.length; i++){
-            for(int j = 0; j < array[i].length; j++){
-                for(int k = 0; k < array[i][j].length; k++){
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                for (int k = 0; k < array[i][j].length; k++) {
                     System.out.print(array[i][j][k] + " ");
                 }
                 System.out.println();
