@@ -1,4 +1,4 @@
-package Array.ArrayTraversal;
+package Array.OperationOnArray;
 
 import java.util.Arrays;
 

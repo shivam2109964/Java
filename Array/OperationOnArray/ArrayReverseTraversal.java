@@ -1,4 +1,4 @@
-package Array.ArrayTraversal;
+package Array.OperationOnArray;
 
 public class ArrayReverseTraversal {
     public static void main(String[] args) {
