@@ -15,13 +15,10 @@ public class ProblemOne {
     }
 
     public static int findMax(int[] array, int index) {
-        System.out.println("INDEX: " + index);
         if (index == array.length - 1) {
             return array[index];
         }
-        System.out.println("-------");
         int recMax = findMax(array, index + 1);
-        System.out.println("Index: " + index);
         return Math.max(recMax, array[index]);
     }
 
