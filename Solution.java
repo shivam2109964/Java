@@ -1,34 +1,26 @@
-import java.util.*;
+import java.util.Arrays;
 
-public class Solution {
+class Solution {
     public static void main(String[] args) {
-        int[] nums = { 0, 1, 2, 4, 5, 7 };
-        List<String> result = summaryRanges(nums);
-        System.out.println(result);
+        int[] array = { 1, 0, 2, 3, 0, 4, 5, 0 };
+        duplicateZero(array);
+        System.out.println(Arrays.toString(array));
     }
 
-    public static List<String> summaryRanges(int[] nums) {
-        List<String> result = new ArrayList<>();
+    public static void duplicateZero(int[] array) {
+        int length = array.length;
+        int possibleDuplicate = 0;
+        int last = length - 1;
 
-        int i = 0;
-        while (i < nums.length) {
-            int start = i;
-
-            // Keep going while the next number is exactly 1 more
-            while (i + 1 < nums.length && nums[i + 1] == nums[i] + 1) {
-                i++;
+        for (int i = 0; i < last - possibleDuplicate; i++) {
+            if (array[i] == 0) {
+                if (i == last - possibleDuplicate) {
+                    array[last] = 0;
+                    last--;
+                    break;
+                }
+                possibleDuplicate++;
             }
-
-            // Now nums[start] to nums[i] is a full range
-            if (start == i) {
-                result.add(String.valueOf(nums[i])); // just one number
-            } else {
-                result.add(nums[start] + "->" + nums[i]); // a range
-            }
-
-            i++; // move to the next number
         }
-
-        return result;
     }
 }
