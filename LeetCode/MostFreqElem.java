@@ -1,15 +1,17 @@
+package LeetCode;
+
 import java.util.HashMap;
 
-class Solution {
+public class MostFreqElem {
     public static void main(String[] args) {
-        int[] nums = { 0, 1, 2, 2, 4, 4, 1, 1, 1 };
-        int result = mostFrequentEven(nums);
+        int[] array = { 0, 1, 2, 2, 4, 4, 1 };
+        int result = mostFreqElem(array);
         System.out.println(result);
     }
 
-    public static int mostFrequentEven(int[] nums) {
+    public static int mostFreqElem(int[] array) {
         HashMap<Integer, Integer> map = new HashMap<>();
-        for (int num : nums) {
+        for (int num : array) {
             if (num % 2 == 0) {
                 map.put(num, map.getOrDefault(num, 0) + 1);
             }
@@ -20,6 +22,7 @@ class Solution {
 
         for (int key : map.keySet()) {
             int freq = map.get(key);
+
             if (freq > maxFreq || (freq == maxFreq && key < result)) {
                 maxFreq = freq;
                 result = key;
@@ -27,4 +30,5 @@ class Solution {
         }
         return result;
     }
+
 }
