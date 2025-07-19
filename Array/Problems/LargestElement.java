@@ -18,7 +18,6 @@ public class LargestElement {
             return array[i];
         }
         int recMax = findLargestElementRec(array, i + 1);
-        System.out.println(recMax);
         return Math.max(recMax, array[i]);
     }
 
