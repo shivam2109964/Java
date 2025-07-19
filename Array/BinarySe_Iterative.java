@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class BinarySe_Iterative {
     public static void main(String[] args) {
-        int[] array = { 2, 3, 32, 24, 12, 14, 5, 31, 6, 4, 34, 12 };
+        int[] array = { 1, 2, 4, 5 };
         int length = array.length;
-        int search = 31;
+        int search = 5;
         insertionSort(array, length);
         System.out.println(Arrays.toString(array));
         System.out.println("");
