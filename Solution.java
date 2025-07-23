@@ -1,30 +1,21 @@
-import java.util.HashMap;
 
 class Solution {
-    public static void main(String[] args) {
-        int[] nums = { 0, 1, 2, 2, 4, 4, 1, 1, 1 };
-        int result = mostFrequentEven(nums);
-        System.out.println(result);
+    public static int coinsCombinations(int amount, int[] coins) {
+        int[] dp = new int[amount + 1];
+        dp[0] = 1; // base case: one way to make 0 amount (using no coins)
+
+        for (int coin : coins) {
+            for (int i = coin; i <= amount; i++) {
+                dp[i] += dp[i - coin];
+            }
+        }
+
+        return dp[amount];
     }
 
-    public static int mostFrequentEven(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for (int num : nums) {
-            if (num % 2 == 0) {
-                map.put(num, map.getOrDefault(num, 0) + 1);
-            }
-        }
-
-        int maxFreq = 0;
-        int result = -1;
-
-        for (int key : map.keySet()) {
-            int freq = map.get(key);
-            if (freq > maxFreq || (freq == maxFreq && key < result)) {
-                maxFreq = freq;
-                result = key;
-            }
-        }
-        return result;
+    public static void main(String[] args) {
+        System.out.println(coinsCombinations(4, new int[]{1, 2}));       // → 4
+        System.out.println(coinsCombinations(10, new int[]{5, 2, 3}));   // → 4
+        System.out.println(coinsCombinations(11, new int[]{5, 7}));      // → 0
     }
 }
