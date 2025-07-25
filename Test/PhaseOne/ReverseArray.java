@@ -1,4 +1,4 @@
-package Test.PhaseOneArray;
+package Test.PhaseOne;
 
 import java.util.Arrays;
 
@@ -10,19 +10,13 @@ public class ReverseArray {
     }
 
     public static void reverseArray(int[] array) {
-        if (array == null || array.length <= 1)
-            return; // Edge Case
-
-        // Two Pointer
         int left = 0;
         int right = array.length - 1;
 
         while (left < right) {
-            // Swap
             int temp = array[left];
             array[left] = array[right];
             array[right] = temp;
-
             left++;
             right--;
         }

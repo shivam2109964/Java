@@ -1,30 +1,20 @@
-package Test.PhaseOneArray;
+package Test.PhaseOne;
 
 import java.util.Arrays;
 
-public class RotateArrayByKStep {
+public class RotateArrayAtKStep {
     public static void main(String[] args) {
-        int[] array = { 1, 2, 3, 4, 5, 6, 7 };
-        int k = 3;
-        rotateArrayKStep(array, k);
+        int[] array = { 1, 2, 3, 4, 5, 6, 7, 8 };
+        int k = 2;
+        rotateArrayAtKStep(array, k);
         System.out.println(Arrays.toString(array));
     }
 
-    public static void rotateArrayKStep(int[] array, int k) {
-        if (array == null || array.length <= 1 || k == 0) {
-            return;
-        }
-
+    public static void rotateArrayAtKStep(int[] array, int k) {
         int len = array.length;
         k = k % len;
-
-        // Step 1: Reverse first k elements
         reverse(array, 0, k - 1);
-
-        // Step 2: Reverse remaining n-k elements
         reverse(array, k, len - 1);
-
-        // Step 3: Reverse the entire array
         reverse(array, 0, len - 1);
     }
 
